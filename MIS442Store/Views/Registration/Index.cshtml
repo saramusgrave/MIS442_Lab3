@@ -1,0 +1,15 @@
+﻿@using MIS442Store.DataLayer.DataModels
+@model List<Registration>
+
+<h1>@ViewBag.Header</h1>
+<table>
+@foreach (var item in Model)
+{
+
+    <tr>
+        <td>@item.RegistrationID</td>
+        <td>@item.RegistrationUserName</td>
+        <td>@item.RegistrationProductID</td>
+    </tr>
+}
+</table>

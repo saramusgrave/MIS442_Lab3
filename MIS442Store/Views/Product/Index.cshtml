@@ -1,0 +1,45 @@
+﻿@using MIS442Store.DataLayer.DataModels
+@model List<Product>
+@Html.ActionLink("add product", "Add", "Product")
+<table>
+    <thead>
+        <tr>
+            <th>
+                ProductCode
+            </th>
+            <th>
+                ProductName
+            </th>
+            <th>
+                ProductVersion
+            </th>
+            <th>
+                PurchaseReleaseDate
+            </th>
+            <th>
+
+            </th>
+        </tr> 
+    </thead>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>
+                @product.ProductCode
+            </td>
+            <td>
+                @product.ProductName
+            </td>
+            <td>
+            @product.ProductVersion
+            </td>
+            <td>
+            @product.ProductReleaseDate
+            </td>
+            <td>
+                <a href="/product/edit/@product.ProductID">Edit Product</a>
+                @Html.ActionLink("Edit Product", "Edit", "Product", new { @ID = product.ProductID }, null)
+            </td>
+        </tr>
+    }
+</table>

@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html> 
 <html>
 <head>
-    <title>@ViewBag</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/Styles/Lab2.css" />
     @RenderSection("PageHead", false)
 </head>
 <body>
     <div id = "Survay">
-    <header><h1>MIS 442 Lab 2</h1></header>
+    <header><h1>@ViewBag.Heading</h1></header>
     <div>
         @RenderBody()
     </div>

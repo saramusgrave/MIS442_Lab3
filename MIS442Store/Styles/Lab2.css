@@ -1,0 +1,10 @@
+h1 {color:white;padding:10px;background-color:#003767;}
+h2 {color:white;padding:10px;background-color:black;}
+#Survay {max-width: 960px;}
+label {display:block;}
+label.RadioLb {text-align: left;display:inline;}
+.EA {width: 180px;}
+.CN {width: 30px;}
+.CD {width: 200px;}
+.Bio {width: 180px;}
+@media screen and (min-width: 481px){label{text-align: right;display:inline-block;width: 150px;}

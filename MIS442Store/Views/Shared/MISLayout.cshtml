@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+    <title>@ViewBag</title>
+    <link rel="stylesheet" href="~/Styles/Lab2.css" />
+    @RenderSection("PageHead", false)
+</head>
+<body>
+    <div id = "Survay">
+    <header><h1>MIS 442 Lab 2</h1></header>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script> 
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("Scripts",false)
+    <footer>Created by Sara Musgrave</footer>
+</div>
+</body>
+</html>

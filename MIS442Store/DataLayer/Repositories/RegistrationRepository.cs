@@ -38,7 +38,7 @@ namespace MIS442Store.DataLayer.Repositories
                             r.RegistrationAddress = reader["RegistrationAddress"].ToString();
                             r.RegistrationState = reader["RegistrationState"].ToString();
                             r.RegistrationCity = reader["RegistrationCity"].ToString();
-                            r.RegistrationZip = reader["RegistraitonZip"].ToString();
+                            r.RegistrationZip = reader["RegistrationZip"].ToString();
                             r.RegistrationPhone = reader["RegistrationPhone"].ToString();
                             registrationList.Add(r);
                         }
@@ -128,24 +128,24 @@ namespace MIS442Store.DataLayer.Repositories
                     if (registration.RegistrationID != 0)
                     {
                         command.Parameters.AddWithValue("@RegistrationID", registration.RegistrationID);
-                        command.CommandText = "UPDATE Registration SET RRegistrationDate = @RegistrationDate, RegistrationProductID = @RegistrationProductID,RegistrationSerialNumber = @RegistrationSerialNumber,RegistrationVerified = @RegistrationVerified,RegistrationUserName = @RegistrationUserName,RegistrationAddress = @RegistrationAddress,RegistrationState = @RegistrationState,RegistrationCity = @RegistrationCity,RegistrationZip = @RegistrationZip,RegistrationPhone = @RegistrationPhone, WHERE RegistrationID= @RegistrationID";
+                        command.CommandText = "UPDATE Registration SET RRegistrationDate = @RegistrationDate, RegistrationProductID = @RegistrationProductID,RegistrationSerialNumber = @RegistrationSerialNumber,RegistrationVerified = @RegistrationVerified,RegistrationUserName = @RegistrationUserName,RegistrationAddress = @RegistrationAddress,RegistrationState = @RegistrationState,RegistrationCity = @RegistrationCity,RegistrationZip = @RegistrationZip,RegistrationPhone = @RegistrationPhone WHERE RegistrationID= @RegistrationID";
                     }
                     else
                     {
-                        command.CommandText = "INSERT INTO REGISTRATION (RegistrationDate, RegistrationProductID, RegistrationSerialNumber, RegistrationVerified, RegistrationUserName, RegistrationAddress, RegistrationState, RegistrationCity, RegistrationZip, RegistrationPhone) VALUES (@RegistrationDate, @RegistrationProductID, @RegistrationSerialNumber, @RegistrationVerified, @RegistrationUserName, @RegistrationAddress, @RegistrationState, @RegistrationCity, @RegistrationZip, @RegistrationPhone) WHERE RegistrationID = @RegistraitonID";
+                        command.CommandText = "INSERT INTO REGISTRATION (RegistrationDate, RegistrationProductID, RegistrationSerialNumber, RegistrationVerified, RegistrationUserName, RegistrationAddress, RegistrationState, RegistrationCity, RegistrationZip, RegistrationPhone) VALUES (@RegistrationDate, @RegistrationProductID, @RegistrationSerialNumber, @RegistrationVerified, @RegistrationUserName, @RegistrationAddress, @RegistrationState, @RegistrationCity, @RegistrationZip, @RegistrationPhone) ";
                     }
                     command.Parameters.AddWithValue("@RegistrationDate", registration.RegistrationDate);
                     command.Parameters.AddWithValue("@RegistrationProductID", registration.RegistrationProductID);
                     command.Parameters.AddWithValue("@RegistrationSerialNumber", registration.RegistrationSerialNumber);
                     command.Parameters.AddWithValue("@RegistrationVerified",registration.RegistrationVerified);
                     command.Parameters.AddWithValue("@RegistrationUserName", registration.RegistrationUserName);
-                    command.Parameters.AddWithValue("@RegistationAddress", registration.RegistrationAddress);
+                    command.Parameters.AddWithValue("@RegistrationAddress", registration.RegistrationAddress);
                     command.Parameters.AddWithValue("@RegistrationState", registration.RegistrationState);
-                    command.Parameters.AddWithValue("@RegistationCity", registration.RegistrationCity);
+                    command.Parameters.AddWithValue("@RegistrationCity", registration.RegistrationCity);
                     command.Parameters.AddWithValue("@RegistrationZip", registration.RegistrationZip);
                     command.Parameters.AddWithValue("@RegistrationPhone", registration.RegistrationPhone);
                     connection.Open();
-                    //command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
                 }
             }
         }

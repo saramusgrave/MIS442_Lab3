@@ -2,13 +2,22 @@
 @model List<Registration>
 
 <h1>@ViewBag.Header</h1>
+@Html.ActionLink("Add Registration", "AddRegistration")
 <table>
+   <thead>
+       <th>Registration ID</th>
+       <th>Registration User Name</th>
+       <th>Registation Product ID</th>
+      
+   </thead>
 @foreach (var item in Model)
 {
-
+    
     <tr>
         <td>@item.RegistrationID</td>
+     
         <td>@item.RegistrationUserName</td>
+ 
         <td>@item.RegistrationProductID</td>
     </tr>
 }

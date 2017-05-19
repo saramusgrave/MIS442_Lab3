@@ -25,7 +25,7 @@ namespace MIS442Store.Controllers
         public ActionResult Index()
         {
             ViewBag.Header = "Registrations";
-            return View(_registrationreop.GetUserRegistrations("sara"));
+            return View(_registrationreop.GetUserRegistrations(User.Identity.Name));
         }
         [HttpGet]
         [Authorize]

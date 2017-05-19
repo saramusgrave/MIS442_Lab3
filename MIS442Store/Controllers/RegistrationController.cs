@@ -28,6 +28,7 @@ namespace MIS442Store.Controllers
             return View(_registrationreop.GetUserRegistrations("sara"));
         }
         [HttpGet]
+        [Authorize]
         public ActionResult AddRegistration()
         {
             RegistrationModel model = new RegistrationModel();
@@ -35,6 +36,7 @@ namespace MIS442Store.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize]
         public ActionResult AddRegistration(RegistrationModel registration)
         {
             if (!ModelState.IsValid)
@@ -51,7 +53,7 @@ namespace MIS442Store.Controllers
             regdata.RegistrationProductID = registration.RegistrationProductID;
             regdata.RegistrationSerialNumber = registration.RegistrationSerialNumber;
             regdata.RegistrationState = registration.RegistrationState;
-            regdata.RegistrationUserName = registration.RegistrationUserName;
+            regdata.RegistrationUserName = User.Identity.Name;
             regdata.RegistrationVerified = registration.RegistrationVerified;
             regdata.RegistrationZip = registration.RegistrationZip;
             

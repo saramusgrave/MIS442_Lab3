@@ -17,7 +17,7 @@ namespace MIS442Store.DataLayer.Repositories
        public List<USState> GetState()
         {
            List<USState>  state = new List<USState>();
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {

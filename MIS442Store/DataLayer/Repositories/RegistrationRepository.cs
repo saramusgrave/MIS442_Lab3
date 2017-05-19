@@ -15,7 +15,7 @@ namespace MIS442Store.DataLayer.Repositories
       public   List<Registration> GetUserRegistrations(string username)
         {
             List<Registration> registrationList = new List<Registration>();
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -50,7 +50,7 @@ namespace MIS442Store.DataLayer.Repositories
        public  List<Registration> GetRegistrations()
         {
             List<Registration>registrationList = new List<Registration>();
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -84,7 +84,7 @@ namespace MIS442Store.DataLayer.Repositories
       public  Registration GetRegistration(int id)
         {
             Registration r = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -118,7 +118,7 @@ namespace MIS442Store.DataLayer.Repositories
      public void SaveRegistration(Registration registration)
         {
             Registration r = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {

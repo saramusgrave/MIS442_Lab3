@@ -17,7 +17,7 @@ namespace MIS442Store.DataLayer.Repositories
         public Product Get(int id)
         {
             Product p = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -45,7 +45,7 @@ namespace MIS442Store.DataLayer.Repositories
         public List<Product> GetList()
         {
             List<Product> ProductList = new List<Product>();
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -74,7 +74,7 @@ namespace MIS442Store.DataLayer.Repositories
         public void Save(Product product)
         {
             Product p = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_SMusgrave"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {

@@ -21,7 +21,7 @@ namespace MIS442Store.Controllers
         }
         [HttpGet]
         public ActionResult Index()
-        {
+        {            
             ViewBag.Title = "MIS442 News";
             ViewBag.Header = "MIS442 News";
             return View(_prodRepo.GetList());
@@ -56,6 +56,21 @@ namespace MIS442Store.Controllers
             }
             _prodRepo.Save(product);
             return RedirectToAction("Index");
+        }
+        [OutputCache(Duration = 300, VaryByParam = "id")]
+        public ActionResult ViewProduct(int id)
+        {
+            Product product = _prodRepo.Get(id);
+            Product ProductModel = new Product()
+            {
+                ProductID = product.ProductID,
+                ProductCode = product.ProductCode,
+                ProductName = product.ProductName,
+                ProductVersion = product.ProductVersion,
+                ProductReleaseDate = product.ProductReleaseDate
+
+            };
+            return ViewProduct(id);
         }
     }
 }

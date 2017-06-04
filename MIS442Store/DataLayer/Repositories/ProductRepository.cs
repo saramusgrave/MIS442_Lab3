@@ -14,7 +14,7 @@ namespace MIS442Store.DataLayer.Repositories
     public class ProductRepository : IProductRepository
     {
         
-        public Product Get(int id)
+        public virtual Product Get(int id)
         {
             Product p = null;
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"MIS442_SMusgrave"].ConnectionString))
@@ -42,7 +42,9 @@ namespace MIS442Store.DataLayer.Repositories
             }
             return (p);
         }
-        public List<Product> GetList()
+
+        //Changed from public List<Product> GetList() to public virtual
+        public virtual List<Product> GetList()
         {
             List<Product> ProductList = new List<Product>();
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_SMusgrave"].ConnectionString))
@@ -71,7 +73,7 @@ namespace MIS442Store.DataLayer.Repositories
             return ProductList;
         }
         
-        public void Save(Product product)
+        public virtual void Save(Product product)
         {
             Product p = null;
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_SMusgrave"].ConnectionString))

@@ -7,4 +7,34 @@ label.RadioLb {text-align: left;display:inline;}
 .CN {width: 30px;}
 .CD {width: 200px;}
 .Bio {width: 180px;}
+
 @media screen and (min-width: 481px){label{text-align: right;display:inline-block;width: 150px;}
+ul
+{
+    list-style-type: none; 
+    padding: 10px; 
+    margin: 10px;
+}
+li
+{
+    float: left; 
+    text-align: justify;
+    width: 135px;
+    border: 5px solid;
+    padding-left: 10px; 
+    padding-right: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+img
+{
+    border: 5px solid;
+    padding: .5px;
+}
+div
+{
+    float: none;
+    text-align: left;
+}
